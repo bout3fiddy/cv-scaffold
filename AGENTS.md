@@ -41,6 +41,8 @@ Use the existing Python renderers; do not create a replacement rendering stack.
 Follow `docs/onboarding.md` for personal-source commands and `docs/workflow.md`
 for final review. Shared-renderer changes require the fictional regression build:
 `python build.py --all`, `python build_cover_letter.py`, `python qa.py`.
+The fictional CV examples declare two pages in `data-expected-pages`; the letter
+is one page. Inspect every page even when the README preview shows only the first.
 Select content to fit the agreed page count; do not shrink individual lines or
 clip overflow. Keep text selectable, links intact and font licences present.
 

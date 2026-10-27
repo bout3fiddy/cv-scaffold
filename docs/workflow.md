@@ -14,7 +14,7 @@ Choose the target audience, then select relevant experience from the profile.
 Write bullets as action + method + outcome. Use metrics only when evidence
 supports the unit, baseline, result and attribution. A concrete qualitative
 outcome is better than a fabricated percentage. Preserve accurate job titles
-and dates when tailoring. Keep the profile broader than the one-page CV.
+and dates when tailoring. Keep the profile broader than the selected CV.
 
 ## 3. Design and implement
 
@@ -33,7 +33,7 @@ that the CV is truthful, fully anonymized or ready to submit.
 
 Review the final exported PDF:
 
-- Expected A4 page count (one for these examples); no clipping or collisions.
+- Expected A4 page count (two for the CV examples, one for the letter); no clipping or collisions.
 - Readable at normal size; consistent margins, spacing and emphasis.
 - Correct name, contact links, employers, role titles and dates.
 - Every claim reconciled with the profile and the candidate's actual contribution.

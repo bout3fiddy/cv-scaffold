@@ -31,8 +31,9 @@ python qa.py
 
 On Windows, activate with `.venv\Scripts\activate` instead.
 The default build (`python build.py`) generates the standard CV as PDF and DOCX.
-All example PDFs fit one A4 page. Longer CVs may flow onto multiple pages;
-validate the intended page count rather than shrinking individual lines.
+The CV examples span two A4 pages; the cover letter remains one page.
+The preview above shows only page one. Validate the intended page count rather
+than shrinking individual lines.
 
 **You can let your agent do the setup and ask you for the facts.** Paste:
 
@@ -100,7 +101,8 @@ python qa.py --source personal/master/resume.html --pdf personal/master/outputs/
 python qa.py --kind letter --source personal/master/cover-letter.md --pdf personal/master/outputs/cover-letter.pdf --personal
 ```
 
-Use `--pages 2` for an intentionally two-page CV. Personal checks require a
+The examples declare `data-expected-pages="2"` in their HTML. QA reads that
+value; use `--pages` to override it for another intended length. Personal checks require a
 ground-truth file and reject recognizable fictional details and metadata;
 they do not verify professional claims. Record factual review separately.
 
@@ -123,8 +125,8 @@ The cover-letter builder produces PDF; CV builders also produce editable DOCX.
 Use either design tool as a visual exploration space. The steps below are a
 manual workflow; this starter does not include a Paper or Figma integration.
 
-1. **Create a page frame.** Use an A4 portrait ratio: 210 by 297 mm, or
-   approximately 794 by 1123 px at 96 px/in. Set side margins to 48 px and
+1. **Create page frames.** Use an A4 portrait ratio: 210 by 297 mm, or
+   approximately 794 by 1123 px at 96 px/in, for each page. Set side margins to 48 px and
    top/bottom margins to about 51 px. Start with the fictional content to avoid
    uploading private career details during design exploration.
 2. **Match the typography.** Install the bundled JetBrains Mono fonts for your
@@ -158,7 +160,7 @@ manual workflow; this starter does not include a Paper or Figma integration.
 | New-build emphasis | `--swe-zero-to-one` in `swe.css` | Muted red |
 | Outlined tags | `--swe-tag-*` in `swe.css` | Transparent, black border |
 
-The default preserves the established JetBrains Mono CV style. To change fonts,
+The default preserves the established JetBrains Mono CV style across pages. To change fonts,
 add appropriately licensed local font files and update the `@font-face` rules
 and font family in `swe.css`. Keep the font licence with the files.
 

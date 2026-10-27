@@ -44,7 +44,7 @@ def check_pdf(path, paragraphs, expected_pages, urls=()):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output-dir', type=Path, default=build.DEFAULT_OUTPUT_DIR)
-    parser.add_argument('--pages', type=int, default=1)
+    parser.add_argument('--pages', type=int, help='Override source data-expected-pages (default 1)')
     parser.add_argument('--personal', action='store_true')
     parser.add_argument('--source', type=Path, help='Custom HTML CV or plain-text letter')
     parser.add_argument('--pdf', type=Path, help='PDF for the custom source')
@@ -63,7 +63,8 @@ def main():
         else:
             paragraphs = args.source.read_text().strip().split('\n\n')
             urls = []
-        report = check_pdf(args.pdf, paragraphs, args.pages, urls)
+        expected_pages = args.pages or (int(source.article.get('data-expected-pages', '1')) if args.kind == 'cv' else 1)
+        report = check_pdf(args.pdf, paragraphs, expected_pages, urls)
         if args.docx:
             text = normalized(''.join(p.text for p in Document(args.docx).paragraphs))
             for paragraph in paragraphs:
@@ -83,7 +84,7 @@ def main():
         nodes = source.article.xpath('.//h1 | .//h2 | .//p')
         paragraphs = [build.source_text(node) for node in nodes]
         urls = source.article.xpath('.//a/@href')
-        reports.append(check_pdf(args.output_dir / (spec['stem'] + '.pdf'), paragraphs, args.pages, urls))
+        reports.append(check_pdf(args.output_dir / (spec['stem'] + '.pdf'), paragraphs, args.pages or int(source.article.get('data-expected-pages', '1')), urls))
         docx = Document(args.output_dir / (spec['stem'] + '.docx'))
         text = normalized(''.join(p.text for p in docx.paragraphs))
         for paragraph in paragraphs:

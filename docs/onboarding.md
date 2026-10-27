@@ -41,7 +41,8 @@ python qa.py --kind letter --source personal/master/cover-letter.md --pdf person
 
 The agent substitutes the user's confirmed metadata in the letter command.
 Personal QA deliberately fails while example identities or links remain. If a
-CV intentionally uses two pages, pass `--pages 2` to its QA command.
+CV changes length, update its `data-expected-pages` attribute or pass
+`--pages` to its QA command. The initial example expects two pages.
 
 For another layout, start from its corresponding example and fix stylesheet
 paths relative to the copied HTML. Pass `--variant strategy` or `--variant quant`

@@ -9,5 +9,7 @@ metrics in the sample were invented for this template. They are not verified
 professional claims and must not be carried into a real CV without evidence.
 All contact and evidence links use example.com and are illustrative only.
 
-The example demonstrates three jobs, one degree, one credential, concise
-outcome bullets, underlined evidence, blue links and outlined skill tags.
+The two-page examples demonstrate three detailed roles, two side projects,
+one degree, two fictional credentials, writing and community contributions.
+All added projects, metrics and qualifications are invented. The shared styling
+uses underlined evidence, blue links and outlined skill tags.
