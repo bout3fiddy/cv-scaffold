@@ -1,14 +1,14 @@
 # Python CV and cover-letter starter
 
 The Python rendering toolkit used in an existing job-hunt workflow, packaged
-with fictional inputs and portable paths. This is the actual ReportLab and
-python-docx implementation, including the standard, quantitative and
+with fictional inputs and portable paths. It uses ReportLab and
+python-docx for the standard, quantitative and
 right-aligned strategy CV layouts, plus the shared cover-letter renderer.
-No browser, Node.js, hosted service or API key is needed to generate documents.
+Documents are generated locally with Python.
 
 **Avery Quill is fictional.** All sample employers, education, credentials,
 projects and results are invented. The same sample facts illustrate the layout
-options; the quantitative and strategy examples are not separate real careers.
+options across all three CVs.
 
 ![Standard CV](output/avery-quill-swe.png)
 
@@ -16,7 +16,7 @@ options; the quantitative and strategy examples are not separate real careers.
 [Strategy PDF](output/avery-quill-strategy.pdf) · [Quantitative layout PDF](output/avery-quill-quant.pdf) ·
 [Cover letter](output/avery-quill-cover-letter.pdf)
 
-## Start in a few minutes
+## Setup
 
 Use a private copy for personal work. Install Python 3.10 or newer, then:
 
@@ -32,8 +32,8 @@ python qa.py
 On Windows, activate with `.venv\Scripts\activate` instead.
 The default build (`python build.py`) generates the standard CV as PDF and DOCX.
 The CV examples span two A4 pages; the cover letter remains one page.
-The preview above shows only page one. Validate the intended page count rather
-than shrinking individual lines.
+The preview above shows page one. Keep the shared type sizes and check the
+intended page count.
 
 **You can let your agent do the setup and ask you for the facts.** Paste:
 
@@ -103,8 +103,8 @@ python qa.py --kind letter --source personal/master/cover-letter.md --pdf person
 
 The examples declare `data-expected-pages="2"` in their HTML. QA reads that
 value; use `--pages` to override it for another intended length. Personal checks require a
-ground-truth file and reject recognizable fictional details and metadata;
-they do not verify professional claims. Record factual review separately.
+ground-truth file and reject recognizable fictional details and metadata.
+Review professional claims against their sources and record the result.
 
 ## Generate cover letters
 
@@ -113,8 +113,7 @@ python build_cover_letter.py --source examples/cover-letter.md --output output/m
 ```
 
 The source uses blank lines between paragraphs and two spaces before a newline
-for an explicit line break. It is a small plain-text format, not a full Markdown
-renderer: headings, lists and emphasis syntax are printed literally.
+for an explicit line break. Headings, lists and emphasis syntax are printed literally.
 The original letter styling is JetBrains Mono, 10 pt text, 15.5 pt leading,
 14 pt paragraph spacing, 42 pt side margins and a 48 pt top margin. Edit the
 `ParagraphStyle` and page settings in `build_cover_letter.py` to change it.
@@ -122,8 +121,8 @@ The cover-letter builder produces PDF; CV builders also produce editable DOCX.
 
 ## Develop your styling in Paper or Figma
 
-Use either design tool as a visual exploration space. The steps below are a
-manual workflow; this starter does not include a Paper or Figma integration.
+Create a design in Paper or Figma, then transfer its measurements to the CSS
+and Python layout code using the steps below.
 
 1. **Create page frames.** Use an A4 portrait ratio: 210 by 297 mm, or
    approximately 794 by 1123 px at 96 px/in, for each page. Set side margins to 48 px and
@@ -135,14 +134,13 @@ manual workflow; this starter does not include a Paper or Figma integration.
    the source's 21 pt, 9 pt, 8.5 pt and 10 pt sizes (1 pt = 4/3 CSS px).
 3. **Build reusable styles.** Define name, contact, section, role, body and tag
    styles. Group a role heading and its bullets as a reusable component. Keep
-   natural text wrapping and left alignment. Use spacing rules instead of
-   adding spaces to align text.
+   natural text wrapping and left alignment. Use layout spacing to align text.
 4. **Try small variations.** Duplicate the frame and vary one thing at a time:
    colour, section hierarchy, spacing or emphasis. Use realistic text lengths.
    Evaluate the whole A4 page and read it at normal size before choosing.
 5. **Translate the selected design into CSS.** Map design values into the
    tokens below. Keep content in `examples/software-engineering.html`; use the canvas as the design
-   reference. Prefer actual text and CSS to a screenshot of the design.
+   reference. Implement the design with selectable text and CSS.
 6. **Render and compare.** Run the Python build and checks, then compare the PDF to
    the selected frame. Browser font metrics can wrap differently. Shorten
    content or adjust global spacing deliberately; do not squeeze individual
@@ -199,5 +197,5 @@ Personal profile files, evidence, `personal/` and application content are ignore
 Git. Example sources and `output/` are tracked: after personalization they can
 contain your career details. Review source, exports, metadata and staged files
 before any push. Share the fictional starter separately from personal work.
-The supplied files contain no real candidate information, but repository
-ownership itself is visible to people with access.
+The supplied examples are fictional. People with repository access can see
+the owner and collaborators.

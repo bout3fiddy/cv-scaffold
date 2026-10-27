@@ -18,7 +18,7 @@
 ## Approval record
 
 No approval yet. Record the user's explicit approval, date and exact version
-here; build success is not approval. Preserve an approved source/export before
+here. Preserve an approved source/export before
 replacing it. Keep historical submission records separate from current drafts.
 
 ## Next action

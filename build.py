@@ -457,7 +457,7 @@ def append_docx_node(paragraph, node: etree._Element, tokens: dict[str, str], si
 
     def append_text(text: str | None, settings: dict[str, object]) -> None:
         # Pretty-printed HTML contributes indentation-only text nodes between
-        # inline elements. They are source formatting, not resume content.
+        # inline elements. Skip these formatting-only nodes.
         if not text or (not text.strip() and ("\n" in text or "\r" in text)):
             return
         run = paragraph.add_run(text)

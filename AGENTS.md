@@ -46,11 +46,18 @@ is one page. Inspect every page even when the README preview shows only the firs
 Select content to fit the agreed page count; do not shrink individual lines or
 clip overflow. Keep text selectable, links intact and font licences present.
 
+## Writing
+
+State the action, evidence and result directly. Use concrete verbs and ordinary
+words. Remove slogans, filler introductions, stock transitions, exaggerated
+claims and rhetorical contrasts. Describe what changed and why it matters.
+Keep CV bullets specific to the candidate's work. Keep instructions concise.
+
 ## Permissions and handoff
 
 Local initialization, drafting, building and checking are normal task work.
 Ask before publishing, pushing personal data, uploading to external tools,
-emailing or submitting unless already authorized. Git ignore is not encryption.
+emailing or submitting unless already authorized. Ignored files remain readable on the local filesystem.
 Review staged files, exports and metadata before an authorized push.
 Record actual checks, unresolved questions and one next action in the private
 review/status files. Call a draft approved only after explicit user approval.

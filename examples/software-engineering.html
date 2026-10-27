@@ -19,7 +19,7 @@
     <p class="contact contact-websites"><a href="https://example.com">example.com</a> | <a href="https://example.com/portfolio">Portfolio</a> | <a href="https://example.com/profile">Professional profile</a></p>
     <p class="contact contact-websites">Fictional example - all career details and results are invented.</p>
   </header>
-  <p class="summary">Software engineer building dependable tools for creative teams, from early prototypes to services used in daily production. Combines backend development, data modelling and close user collaboration with practical experience in search, asynchronous processing and operational support. Enjoys making complex workflows easier to understand, test and maintain.</p>
+  <p class="summary">Software engineer working on asset catalogues, review services and reporting tools for creative teams. Builds Python and TypeScript services with PostgreSQL, background workers and automated tests. Works with designers and support teams to define requirements, investigate production failures and maintain integrations through schema changes and releases.</p>
   <section aria-labelledby="skills">
     <h2 id="skills">Skills</h2>
     <p class="skills-copy"><strong>Engineering:</strong> Python, TypeScript, PostgreSQL, REST APIs, background workers.</p><p class="skills-copy"><strong>Data and quality:</strong> Search evaluation, SQL modelling, integration tests, performance profiling.</p><p class="skills-copy"><strong>Delivery:</strong> Docker, Git, CI/CD, cloud hosting, metrics, logs and release automation.</p><p class="skills-copy"><strong>Collaboration:</strong> Technical discovery, design reviews, mentoring, documentation and incident response.</p></section>
@@ -28,7 +28,7 @@
     <article class="job">
       <p class="job-heading"><strong class="role">Senior Software Engineer</strong> | <em>Lantern Studio</em> | <time class="date">2024 - Present</time></p>
       <div class="bullets">
-        <p class="bullet">- <span class="zero-to-one">Zero-to-one delivery</span> - built a review service for design teams, bringing <u>six approval steps into one shared workspace</u>.</p>
+        <p class="bullet">- <span class="zero-to-one">Built</span> a review service for design teams, bringing <u>six approval steps into one shared workspace</u>.</p>
         <p class="bullet">- Improved asset processing with queued jobs and caching, reducing typical turnaround from 12 minutes to <u>under 3 minutes</u>.</p>
       <p class="bullet">- Led discovery with eight designers and production coordinators, mapping review decisions and exception paths before defining the service API and its initial release scope.</p><p class="bullet">- Designed idempotent background workers with bounded retries and a failed-job queue, allowing interrupted processing to resume without creating duplicate assets or notifications.</p><p class="bullet">- Introduced structured logs, queue-depth alerts and a service dashboard; reduced the time needed to locate common processing failures from roughly 45 minutes to 15 minutes.</p><p class="bullet">- Established contract tests for three external integrations and staged releases with rollback checks, helping the team ship weekly without relying on a manual release checklist.</p><p class="bullet">- Mentored two developers through code reviews and paired debugging sessions; wrote decision records explaining storage boundaries, failure handling and operational trade-offs.</p></div>
     </article>
@@ -37,7 +37,7 @@
       <div class="bullets">
         <p class="bullet">- Designed a searchable asset catalogue with PostgreSQL; validated relevance with <a href="https://example.com/evidence">a curated evaluation set</a>.</p>
         <p class="bullet">- Partnered with support and design to automate imports, saving <u>five hours of manual work each week</u>.</p>
-      <p class="bullet">- Built a versioned import API for customer asset libraries, separating validation from persistence so rejected records could be corrected and replayed without restarting a complete batch.</p><p class="bullet">- Profiled slow catalogue queries and introduced targeted indexes, reducing the median response time for the most-used listing endpoint from 900 milliseconds to 240 milliseconds.</p><p class="bullet">- Migrated an older metadata format through additive schema changes and a resumable backfill, preserving existing client integrations throughout the transition.</p><p class="bullet">- Created a representative set of 180 search queries with support colleagues and tracked regressions before releases, making relevance decisions easier to explain and reproduce.</p><p class="bullet">- Rotated through production support, documented recurring failure patterns and turned the most common fixes into automated checks and clearer customer-facing error messages.</p></div>
+      <p class="bullet">- Built a versioned import API for customer asset libraries, separating validation from persistence so rejected records could be corrected and replayed without restarting a complete batch.</p><p class="bullet">- Profiled slow catalogue queries and introduced targeted indexes, reducing the median response time for the most-used listing endpoint from 900 milliseconds to 240 milliseconds.</p><p class="bullet">- Migrated an older metadata format through additive schema changes and a resumable backfill, preserving existing client integrations throughout the transition.</p><p class="bullet">- Created a representative set of 180 search queries with support colleagues and tracked regressions before releases, documenting how each ranking change affected the results.</p><p class="bullet">- Rotated through production support, documented recurring failure patterns and added automated checks for common failures and error messages with recovery steps.</p></div>
     </article>
     <article class="job">
       <p class="job-heading"><strong class="role">Junior Developer</strong> | <em>Kitebox Workshop</em> | <time class="date">2020 - 2022</time></p>
@@ -52,7 +52,7 @@
 <p class="bullet">- Built a small Python job runner to explore retry policies, cancellation and worker recovery. Added fault-injection scenarios for process termination, delayed responses and duplicate delivery; documented which guarantees belonged to the worker and which required application-level checks.</p>
 <p class="bullet">- Published a reproducible local demo with a queue dashboard and example workloads, allowing colleagues to compare throughput and failure behaviour under controlled conditions.</p>
 <p class="education-entry"><strong>Find the Frame</strong> | <a href="https://example.com/find-the-frame">Technical walkthrough</a> | 2023</p>
-<p class="bullet">- Prototyped a catalogue for a fictional community film archive, combining structured metadata filters with text search. Interviewed volunteer librarians, defined a small relevance benchmark and compared ranking changes against the same query set.</p>
+<p class="bullet">- Prototyped a catalogue for a community film archive, combining structured metadata filters with text search. Interviewed volunteer librarians, defined a small relevance benchmark and compared ranking changes against the same query set.</p>
 <p class="bullet">- Added keyboard navigation, clear empty states and import validation. Used feedback from five trial sessions to simplify the search form and make missing metadata visible before publication.</p>
 </section><section aria-labelledby="education">
     <h2 id="education">Education</h2>
@@ -61,12 +61,12 @@
   <section aria-labelledby="certifications">
     <h2 id="certifications">Certifications</h2>
     <p class="education-entry">Cloud Foundations | Example Learning Institute</p>
-    <p class="education-entry">Accessible Product Delivery | Example Learning Institute | 2024</p><p class="certification-tags"><span class="skill-tag">Cloud Systems</span><span class="skill-tag">Automation</span><span class="skill-tag">Reliable Delivery</span></p>
+    <p class="education-entry">Accessible Product Delivery | Example Learning Institute | 2024</p><p class="certification-tags"><span class="skill-tag">Cloud Systems</span><span class="skill-tag">Automation</span><span class="skill-tag">Release Testing</span></p>
   </section>
 <section aria-labelledby="community"><h2 id="community">Writing and Community</h2>
-<p class="bullet">- Wrote a practical guide to diagnosing background-job failures, using worked examples to explain timeouts, retries and duplicate processing to engineers joining the team.</p>
+<p class="bullet">- Wrote a guide to diagnosing background-job failures, using worked examples to explain timeouts, retries and duplicate processing to engineers joining the team.</p>
 <p class="bullet">- Facilitated a monthly engineering reading group on reliability and testing; captured short notes linking each discussion to a concrete improvement in the team's development process.</p>
-<p class="bullet">- Volunteered at a fictional community coding club, supporting beginner projects and reviewing examples for clear naming, useful errors and straightforward setup instructions.</p>
+<p class="bullet">- Volunteered at a community coding club, helping beginners debug projects, write error messages and document installation steps.</p>
 </section></article>
 </main>
 </body>

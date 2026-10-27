@@ -1,8 +1,8 @@
 # Ground truth: copy to ground-truth.md
 
-This is an intake worksheet, not CV prose. Keep only confirmed facts in your CV.
+Use this worksheet to record facts and their sources. Draft the CV from confirmed entries.
 `ground-truth.md` and `evidence/` are ignored by Git. Do not paste secrets or
-unnecessary identity documents here. Git ignore does not protect CV exports.
+unnecessary identity documents here. Review the contents of tracked CV exports before sharing.
 
 ## Identity and contact
 

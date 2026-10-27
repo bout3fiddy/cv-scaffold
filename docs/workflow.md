@@ -12,8 +12,7 @@ The fictional example is never a source for a real candidate.
 
 Choose the target audience, then select relevant experience from the profile.
 Write bullets as action + method + outcome. Use metrics only when evidence
-supports the unit, baseline, result and attribution. A concrete qualitative
-outcome is better than a fabricated percentage. Preserve accurate job titles
+supports the unit, baseline, result and attribution. Describe the observed outcome when a metric is unavailable. Preserve accurate job titles
 and dates when tailoring. Keep the profile broader than the selected CV.
 
 ## 3. Design and implement
@@ -28,8 +27,8 @@ Use the explicit-source build and QA commands in [onboarding](onboarding.md)
 for personal documents. Run the full example build and `python qa.py` after
 shared-renderer changes.
 The personal check requires your ground-truth file and rejects recognizable
-sample names, example links and bracketed prompts. Passing it is not evidence
-that the CV is truthful, fully anonymized or ready to submit.
+sample names, example links and bracketed prompts. Complete the factual,
+privacy and visual reviews before sharing a document.
 
 Review the final exported PDF:
 
@@ -41,7 +40,7 @@ Review the final exported PDF:
 - No private notes, hidden comments or identifying PDF metadata you did not intend.
 
 Refresh the PNG preview after any change. If you cannot render or visually
-inspect the PDF, report that limitation instead of marking review complete.
+inspect the PDF, record the review as incomplete and explain the limitation.
 
 ## 5. Save and share deliberately
 

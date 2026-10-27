@@ -5,7 +5,8 @@
 Facts and claim evidence live in the profile. Preferences and design choices
 live in profile/preferences.md. Reusable CV/letter text lives in personal/master.
 Role-specific requirements and tailoring live under applications. Instruction
-files contain durable rules, not dates, personal facts or today's tasks.
+files contain durable rules. Record dates, personal facts and current tasks
+in the profile and private status files.
 
 Use filenames consistently. Do not create final-final or competing masters.
 A source is canonical; a PDF or DOCX is an export. Record which source/version
@@ -25,8 +26,7 @@ history or delete material without authorization. No automatic cleanup job runs.
 
 ## Verification
 
-Content-only edits require checks on affected documents, not every unrelated
-application. Shared Python, fonts or CSS changes require the example regression
+For content edits, check the affected documents. Shared Python, fonts or CSS changes require the example regression
 build and visual review of affected layouts. Reuse still-valid evidence; mark
 stale review results when source or renderer changes. Do not mark a check passed
 without running it or a draft approved without explicit user confirmation.

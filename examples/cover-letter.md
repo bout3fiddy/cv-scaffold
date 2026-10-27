@@ -4,11 +4,11 @@ Example City
 
 Dear Hiring Team,
 
-I am applying for the Software Engineer role at Paperboat Works. I enjoy building tools that remove friction from creative work, and your fictional brief for a shared production workspace is a useful example of the kind of problem I would like to solve.
+I am applying for the Software Engineer role at Paperboat Works. Your brief describes a production workspace for creative teams. My experience building asset catalogues and review services would be relevant to the approval workflow and integration work it outlines.
 
-At Lantern Studio, I built a review service that brought six approval steps into a shared workspace. The work involved understanding how designers and reviewers made decisions, then translating that process into a service the team could maintain. I would bring the same attention to users and reliable delivery to this role.
+At Lantern Studio, I built a review service that brought six approval steps into one workspace. I worked with designers and production coordinators to map decisions and exceptions, then implemented the API and background processing. I also added integration tests, release checks and operational dashboards so the team could maintain the service after launch.
 
-Earlier, at Mosslight Tools, I worked with support and design on searchable assets and automated imports. Those projects taught me to validate quality against concrete examples and make operational handover part of delivery. I would welcome a conversation about the workflows your team wants to improve.
+At Mosslight Tools, I built search and import features with input from support and design. We evaluated search changes against a fixed set of queries and made rejected imports available for correction and replay. I would welcome a conversation about your current workflow, its failure points and the first improvements you want to deliver.
 
 Kind regards,  
 Avery Quill

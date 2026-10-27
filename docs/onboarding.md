@@ -4,7 +4,7 @@ Paste this into the agent after opening the repository:
 
 > Set up my CV workspace using AGENTS.md and docs/onboarding.md. Initialize the
 > private files, then interview me in small batches. Use any CV or notes I supply
-> as evidence to review, not facts to assume. Build my master CV and a reusable
+> as evidence and confirm uncertain claims with me. Build my master CV and a
 > cover-letter draft from confirmed information. Keep the current styling unless
 > I request a change. Check and show the documents, record open questions, and
 > wait for my approval before calling them final. Do not publish or submit them.
@@ -15,10 +15,10 @@ Paste this into the agent after opening the repository:
    It creates private working copies without overwriting existing files. The
    copied sources are still fictional: never present them as the user's CV.
 2. Ask first for target role, any existing CV/notes, preferred language and what
-   contact details to show. Accept plain conversation; the user need not edit files.
+   contact details to show. Collect answers in conversation and update the files.
 3. Extract supplied evidence into the profile. Ask about two or three connected
    gaps at a time: dates, individual contribution, outcomes, education, links.
-   Summarize uncertain claims for confirmation. Do not require fabricated metrics.
+   Ask the user to confirm uncertain claims. Use metrics only when supported.
 4. Confirm the preferred layout and page count. Draft from confirmed facts only.
    Replace all fictional source text, comments, title/author/description metadata,
    URLs and letter content. A reusable letter can be a draft until a target exists.
@@ -46,6 +46,6 @@ CV changes length, update its `data-expected-pages` attribute or pass
 
 For another layout, start from its corresponding example and fix stylesheet
 paths relative to the copied HTML. Pass `--variant strategy` or `--variant quant`
-to the builder; keep that example's HTML structure. Do not change the shared
-renderer just to substitute personal content. For role-specific drafts, use
+to the builder and preserve the example's HTML structure. Edit personal
+content in the copied source. For role-specific drafts, use
 `applications/<organisation>--<role>/` and the same explicit-source commands.

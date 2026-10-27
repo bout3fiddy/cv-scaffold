@@ -286,7 +286,7 @@ def build_pdf(source, output_path, tokens):
                 story.append(Spacer(1, build.token_float(tokens, "pdf-v2-job-gap")))
             bullets = build.select(job, "p.bullet")
             # Keep each heading with its first bullet, allowing the rest of a role
-            # to continue on the next page instead of leaving a large empty area.
+            # to continue on the next page.
             story.append(KeepTogether([
                 paragraph(build.select(job, "p.job-heading")[0], "job_heading"),
                 Spacer(1, build.token_float(tokens, "pdf-v2-role-content-gap")),
