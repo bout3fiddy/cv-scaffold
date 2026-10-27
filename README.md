@@ -76,7 +76,7 @@ explain any of them.
 | `profile/ground-truth.md` | Confirmed personal facts, sources and unresolved questions |
 | `profile/preferences.md` | Target roles, language, page count, tone and contact preferences |
 | `profile/evidence/` | Supporting documents you choose to provide |
-| `personal/master/` | Your master CV, letter draft, review record and approved versions |
+| `personal/master/` | Both focused CV sources, letter draft, review record and approved versions |
 | `personal/master/outputs/` | Generated drafts of your personal documents |
 | `personal/status.md` | Current progress and the next action |
 | `applications/` | Role briefs, tailored documents, outputs and submission records |
@@ -84,19 +84,45 @@ explain any of them.
 | `design/cover_letter/` | Cover-letter layout and design references |
 | `examples/` and `output/` | Fictional demonstration documents and their exports |
 
-## Examples and design
+## Two CV types from one ground truth
 
-The examples describe **Avery Quill, a fictional candidate**. All employers,
-qualifications and achievements are invented. The CVs span two pages; the
-preview below shows the first page of the standard version.
+Your ground truth is the shared record of your experience, education, skills
+and confirmed results. The agent uses it to prepare two CVs for different
+audiences:
 
-![Standard CV, first page](output/avery-quill-swe.png)
+| CV | Focus | What it leads with |
+| --- | --- | --- |
+| **CV type 1** | Backend engineering and systems | Implementation, APIs, data processing, testing and performance |
+| **CV type 2** | Technical delivery and product collaboration | Discovery, release planning, stakeholder work, mentoring and adoption |
 
-[Standard CV](output/avery-quill-swe.pdf) · [Word version](output/avery-quill-swe.docx) ·
-[Strategy layout](output/avery-quill-strategy.pdf) · [Quantitative layout](output/avery-quill-quant.pdf) ·
+Both describe the same person. Employers, titles, dates, qualifications and
+results stay consistent. The agent changes the summary and the order and
+emphasis of skills, achievements and projects to suit each audience. You can
+choose different focuses for your own two versions.
+
+The agent records your facts once in `profile/ground-truth.md` and keeps the
+two CV drafts under `personal/master/`. It prepares the focused wording, then
+generates the PDF and Word files from those drafts. When you correct a fact,
+it updates the profile and checks both active CVs for the same correction.
+Each version has its own review and approval history.
+
+> Create CV type 1 for backend engineering roles and CV type 2 for technical
+> delivery roles from my confirmed profile. Explain the emphasis in each,
+> keep the career facts consistent, and show me both versions for review.
+
+The examples use **Avery Quill, a fictional candidate**. Both draw from the
+same [fictional ground truth](profile/fictional-ground-truth.md), and checks
+compare their factual text with that record. All employers, qualifications
+and achievements are invented. Both CVs span two pages and share the same
+visual style. The preview below shows the first page of CV type 1.
+
+![CV type 1, first page](output/CV%20type%201.png)
+
+[CV type 1 PDF](output/CV%20type%201.pdf) · [CV type 1 Word](output/CV%20type%201.docx) ·
+[CV type 2 PDF](output/CV%20type%202.pdf) · [CV type 2 Word](output/CV%20type%202.docx) ·
 [Cover letter](output/avery-quill-cover-letter.pdf)
 
-Ask your agent to compare the layouts or develop a style from a reference.
+Ask your agent to compare the versions or develop a style from a reference.
 The agent follows the design instructions stored under `design/`.
 
 ## Privacy and approval

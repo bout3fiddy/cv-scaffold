@@ -16,3 +16,7 @@ role sources. Rebuild only the affected documents; do not change past submission
 
 Do not put actual facts into the tracked worksheet or fictional provenance file.
 Private files and evidence stay ignored unless the user chooses another policy.
+
+The fictional demonstration uses `fictional-ground-truth.md` for both CV types.
+Keep this shared example record consistent with the fact references in the
+example sources. Personal facts remain in the ignored ground-truth file.

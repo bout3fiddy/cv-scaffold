@@ -9,7 +9,8 @@ CV design belongs in `design/cv/`; letter design belongs in `design/cover_letter
 files contain durable rules. Record dates, personal facts and current tasks
 in the profile and private status files.
 
-Use filenames consistently. Do not create final-final or competing masters.
+Use filenames consistently. Keep the two named CV views against one profile and use a version label for
+each approved export.
 A source is canonical; a PDF or DOCX is an export. Record which source/version
 produced each approved export. Keep the distributed fictional examples intact.
 

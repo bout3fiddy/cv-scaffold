@@ -7,10 +7,11 @@ commands live in the design folders' AGENTS.md files.
 
 ## Layout choices
 
-The standard CV uses coloured emphasis and outlined skill tags. The strategy
-layout aligns dates at the right margin. The quantitative layout uses more
-compact spacing. All use JetBrains Mono and selectable text. The examples are
-two pages; a personal CV follows the page count agreed with the user.
+CV type 1 and CV type 2 use the same standard layout, with coloured emphasis
+and outlined skill tags. Their content emphasises different parts of the same
+profile. Both examples are two pages. The code also retains aligned-date and
+compact layout helpers for future design work; the example build exports only
+the two named CV types.
 
 The cover letter uses JetBrains Mono on A4 with paragraph spacing and a
 one-page target. CV content belongs in the profile and document sources;
@@ -33,7 +34,7 @@ letter content belongs in the personal or role-specific draft.
    colour, section hierarchy, spacing or emphasis. Use realistic text lengths.
    Evaluate the whole A4 page and read it at normal size before choosing.
 5. **Translate the selected design into CSS.** Map design values into the
-   tokens below. Keep content in `../examples/software-engineering.html`; use the canvas as the design
+   tokens below. Keep content in `../examples/cv-type-1.html`; use the canvas as the design
    reference. Implement the design with selectable text and CSS.
 6. **Render and compare.** Run the Python build and checks, then compare the PDF to
    the selected frame. Browser font metrics can wrap differently. Shorten
@@ -89,8 +90,8 @@ the letter renderer.
 
 ## Prompts the agent should support
 
-> Compare the three CV layouts using the same content. Show me the PDFs and
-> explain how the spacing and hierarchy affect readability.
+> Compare CV type 1 and CV type 2. Explain which experience each version
+> emphasises and how it relates to the target role.
 
 > Use this Paper or Figma frame as a reference for my CV. Keep my wording and
 > contact links, match the typography and spacing, and show me the result.

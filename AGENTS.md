@@ -33,7 +33,7 @@ work. Fictional examples provide structure and styling only.
 
 Keep durable rules in the nearest instruction file and volatile facts in the
 profile, status or review records. Update instructions and README together when
-paths, commands or ownership change. Do not create duplicate masters. Preserve
+paths, commands or ownership change. Keep the two named CV sources grounded in the same profile. Preserve
 uncommitted work and approved exports; inspect exact scope before any deletion.
 Use `docs/housekeeping.md` for versions, approval and handoff rules.
 
@@ -74,6 +74,8 @@ Use the existing Python renderers; do not create a replacement rendering stack.
 Use `personal/AGENTS.md` for personal-document commands and `docs/workflow.md`
 for final review. Shared-renderer changes require the fictional regression build:
 `python build.py --all`, `python build_cover_letter.py`, `python qa.py`.
+CV type 1 and CV type 2 share `profile/fictional-ground-truth.md`; the agent
+selects emphasis in each HTML source and the Python builder renders it.
 The fictional CV examples declare two pages in `data-expected-pages`; the letter
 is one page. Inspect every page even when the README preview shows only the first.
 Select content to fit the agreed page count; do not shrink individual lines or

@@ -18,9 +18,10 @@ python-docx generates editable CVs. HTML supplies the content and browser
 preview. The Python renderers read supported CSS tokens; new design features
 may require changes in the layout modules.
 
-The strategy example uses the same fictional history to demonstrate aligned
-dates. The quantitative example demonstrates the original compact renderer.
-All variants describe the same fictional candidate.
+The two examples use the standard renderer and one fictional ground-truth
+record. CV type 1 emphasises backend engineering; CV type 2 emphasises technical
+delivery. The original aligned-date and compact rendering helpers remain
+available in the design package.
 
 Root build scripts delegate to the design packages. Layout imports and asset
 paths follow the package locations; example content remains in `examples/`.

@@ -9,7 +9,8 @@ def initialize(root=ROOT):
     copies = {
         'profile/ground-truth.md': 'profile/ground-truth.example.md',
         'profile/preferences.md': 'templates/preferences.md',
-        'personal/master/resume.html': 'examples/software-engineering.html',
+        'personal/master/cv-type-1.html': 'examples/cv-type-1.html',
+        'personal/master/cv-type-2.html': 'examples/cv-type-2.html',
         'personal/master/cover-letter.md': 'examples/cover-letter.md',
         'personal/master/review.md': 'templates/review.md',
     }

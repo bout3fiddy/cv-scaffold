@@ -15,15 +15,15 @@ Keep content edits in the HTML sources and retain font redistribution terms.
 From the repository root, use the selected Python runtime:
 
 ```sh
-python build.py --variant swe
-python build.py --variant strategy
-python build.py --variant quant
+python build.py --variant type1
+python build.py --variant type2
 python build.py --all --format pdf
-python build.py --variant swe --source personal/master/resume.html --stem resume --output-dir personal/master/outputs
+python build.py --variant type1 --source personal/master/cv-type-1.html --stem resume --output-dir personal/master/outputs
 python qa.py
 ```
 
-The default build produces both PDF and DOCX for the standard CV. QA without
+The default build produces PDF and DOCX for CV type 1. `--all` builds exactly
+two types, using output stems `CV type 1` and `CV type 2`. QA without
 arguments checks all registered examples and the example letter; build that
 letter before the full check. Personal sources use the explicit-file checks
 in `../../personal/AGENTS.md`.
@@ -31,10 +31,19 @@ in `../../personal/AGENTS.md`.
 To refresh the README's first-page preview:
 
 ```sh
-pdftoppm -f 1 -singlefile -scale-to 1200 -png output/avery-quill-swe.pdf output/avery-quill-swe
+pdftoppm -f 1 -singlefile -scale-to 1200 -png "output/CV type 1.pdf" "output/CV type 1"
 ```
 
 Inspect every page of a changed export, including pages omitted from the README
 preview. Install the local fonts in the Word review environment. Word and
 LibreOffice pagination can differ from the ReportLab PDF. Keep the PDF as the
 reference for exact layout.
+
+## Focused examples
+
+Both types use the standard layout. Type 1 leads with backend and systems work;
+type 2 leads with discovery, delivery and collaboration. Keep type selection
+separate from layout code. Shared example facts live in
+`../../profile/fictional-ground-truth.md`. Each source paragraph references a
+fact ID; QA rejects drift and checks that both examples retain the same facts.
+The agent writes and orders each focused source before the renderer exports it.

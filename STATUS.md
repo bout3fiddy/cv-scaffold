@@ -1,7 +1,6 @@
 # Starter status
 
-- Distributed examples: fictional two-page CVs and a one-page cover letter using the shared Python renderers.
-- New user's next action: ask their agent to follow `docs/onboarding.md`.
-- Ask the agent to initialize the workspace; existing files are preserved.
-- Record personal progress in the ignored `personal/status.md`.
-- Design ownership: `design/cv/` and `design/cover_letter/`. Follow their guides for styling changes.
+- Examples: CV type 1 (backend engineering), CV type 2 (technical delivery), and a cover letter.
+- Both CVs use one fictional ground-truth record and span two pages.
+- New user's next action: ask their agent to follow `docs/onboarding.md` and choose the two target audiences.
+- Personal progress belongs in the ignored `personal/status.md`.

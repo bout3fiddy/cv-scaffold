@@ -43,15 +43,16 @@ FIXED_DOCUMENT_TIME = "2026-09-10T00:00:00Z"
 DOCX_FONT_NAME = "JetBrains Mono"
 
 SOURCES = {
-    "quant": {
-        "html": ROOT / "examples/quantitative-research.html",
-        "stem": "avery-quill-quant",
+    "type1": {
+        "html": ROOT / "examples/cv-type-1.html",
+        "stem": "CV type 1",
+        "layout": "swe",
     },
-    "swe": {
-        "html": ROOT / "examples/software-engineering.html",
-        "stem": "avery-quill-swe",
+    "type2": {
+        "html": ROOT / "examples/cv-type-2.html",
+        "stem": "CV type 2",
+        "layout": "swe",
     },
-    "strategy": {"html": ROOT / "examples/strategy.html", "stem": "avery-quill-strategy"},
 }
 
 
@@ -737,9 +738,10 @@ def build_docx(source: ResumeSource, output_path: Path, tokens: dict[str, str], 
 
 def build_variant(key: str, output_dir: Path, formats: Iterable[str], revision: str = "v2") -> list[Path]:
     spec = SOURCES[key]
+    layout = spec["layout"]
     source = load_source(spec["html"])
     tokens = parse_css_tokens()
-    if key in {"swe", "strategy"}:
+    if layout in {"swe", "strategy"}:
         if revision != "v2":
             raise ValueError("The current standard and strategy examples require revision v2.")
         from . import swe_layout
@@ -748,8 +750,8 @@ def build_variant(key: str, output_dir: Path, formats: Iterable[str], revision: 
     stem = candidate_stem(key, revision)
     if "pdf" in formats:
         pdf_path = output_dir / f"{stem}.pdf"
-        if key in {"swe", "strategy"}:
-            if key == "strategy":
+        if layout in {"swe", "strategy"}:
+            if layout == "strategy":
                 from . import strategy_layout
                 strategy_layout.build_pdf(source, pdf_path, tokens)
             else:
@@ -759,9 +761,9 @@ def build_variant(key: str, output_dir: Path, formats: Iterable[str], revision: 
         outputs.append(pdf_path)
     if "docx" in formats:
         docx_path = output_dir / f"{stem}.docx"
-        if key in {"swe", "strategy"}:
+        if layout in {"swe", "strategy"}:
             swe_layout.build_docx(source, docx_path, tokens)
-            if key == "strategy":
+            if layout == "strategy":
                 from . import strategy_layout
                 document = Document(docx_path)
                 strategy_layout.align_docx_dates(document, source, tokens)
@@ -790,7 +792,7 @@ def main() -> None:
     os.environ.setdefault("SOURCE_DATE_EPOCH", "1788998400")
     rl_config.invariant = 1
     formats = ("pdf", "docx") if args.format == "both" else (args.format,)
-    variants = sorted(SOURCES) if args.all else [args.variant or "swe"]
+    variants = sorted(SOURCES) if args.all else [args.variant or "type1"]
     if args.all and (args.source or args.stem):
         parser.error("--source and --stem require a single variant")
     if args.source:

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Avery Quill">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CV type 1: backend engineering and systems, based on the fictional Avery Quill profile.">
+  <title>Avery Quill - CV type 1</title>
+  <link rel="stylesheet" href="../design/cv/resume.css">
+  <link rel="stylesheet" href="../design/cv/swe.css">
+</head>
+<body>
+<main>
+<article class="resume" data-variant="swe" data-expected-links="7" data-expected-pages="2" data-focus="backend-engineering" data-ground-truth="../profile/fictional-ground-truth.md">
+  <!-- Entire candidate, career history and metrics are fictional. -->
+  <header>
+    <h1 data-fact-id="F001">Avery Quill</h1>
+    <p class="contact" data-fact-id="F002">Example City | <a href="mailto:avery.quill@example.com">avery.quill@example.com</a> | Contact via email</p>
+    <p class="contact contact-websites" data-fact-id="F003"><a href="https://example.com">example.com</a> | <a href="https://example.com/portfolio">Portfolio</a> | <a href="https://example.com/profile">Professional profile</a></p>
+    <p class="contact contact-websites" data-fact-id="F004">Fictional example - all career details and results are invented.</p>
+  </header>
+  <p class="summary" data-fact-id="S001">Software engineer working on asset catalogues, review services and reporting tools for creative teams. Builds Python and TypeScript services with PostgreSQL, background workers and automated tests. Works with designers and support teams to define requirements, investigate production failures and maintain integrations through schema changes and releases.</p>
+  <section aria-labelledby="skills">
+    <h2 id="skills">Skills</h2>
+    <p class="skills-copy" data-fact-id="F006"><strong>Engineering:</strong> Python, TypeScript, PostgreSQL, REST APIs, background workers.</p><p class="skills-copy" data-fact-id="F007"><strong>Data and quality:</strong> Search evaluation, SQL modelling, integration tests, performance profiling.</p><p class="skills-copy" data-fact-id="F008"><strong>Delivery:</strong> Docker, Git, CI/CD, cloud hosting, metrics, logs and release automation.</p><p class="skills-copy" data-fact-id="F009"><strong>Collaboration:</strong> Technical discovery, design reviews, mentoring, documentation and incident response.</p></section>
+  <section aria-labelledby="experience">
+    <h2 id="experience">Professional Experience</h2>
+    <article class="job">
+      <p class="job-heading" data-fact-id="F010"><strong class="role">Senior Software Engineer</strong> | <em>Lantern Studio</em> | <time class="date">2024 - Present</time></p>
+      <div class="bullets">
+        <p class="bullet" data-fact-id="F011">- <span class="zero-to-one">Built</span> a review service for design teams, bringing <u>six approval steps into one shared workspace</u>.</p>
+        <p class="bullet" data-fact-id="F012">- Improved asset processing with queued jobs and caching, reducing typical turnaround from 12 minutes to <u>under 3 minutes</u>.</p>
+      <p class="bullet" data-fact-id="F013">- Led discovery with eight designers and production coordinators, mapping review decisions and exception paths before defining the service API and its initial release scope.</p><p class="bullet" data-fact-id="F014">- Designed idempotent background workers with bounded retries and a failed-job queue, allowing interrupted processing to resume without creating duplicate assets or notifications.</p><p class="bullet" data-fact-id="F015">- Introduced structured logs, queue-depth alerts and a service dashboard; reduced the time needed to locate common processing failures from roughly 45 minutes to 15 minutes.</p><p class="bullet" data-fact-id="F016">- Established contract tests for three external integrations and staged releases with rollback checks, helping the team ship weekly without relying on a manual release checklist.</p><p class="bullet" data-fact-id="F017">- Mentored two developers through code reviews and paired debugging sessions; wrote decision records explaining storage boundaries, failure handling and operational trade-offs.</p></div>
+    </article>
+    <article class="job">
+      <p class="job-heading" data-fact-id="F018"><strong class="role">Software Engineer</strong> | <em>Mosslight Tools</em> | <time class="date">2022 - 2024</time></p>
+      <div class="bullets">
+        <p class="bullet" data-fact-id="F019">- Designed a searchable asset catalogue with PostgreSQL; validated relevance with <a href="https://example.com/evidence">a curated evaluation set</a>.</p>
+        <p class="bullet" data-fact-id="F020">- Partnered with support and design to automate imports, saving <u>five hours of manual work each week</u>.</p>
+      <p class="bullet" data-fact-id="F021">- Built a versioned import API for customer asset libraries, separating validation from persistence so rejected records could be corrected and replayed without restarting a complete batch.</p><p class="bullet" data-fact-id="F022">- Profiled slow catalogue queries and introduced targeted indexes, reducing the median response time for the most-used listing endpoint from 900 milliseconds to 240 milliseconds.</p><p class="bullet" data-fact-id="F023">- Migrated an older metadata format through additive schema changes and a resumable backfill, preserving existing client integrations throughout the transition.</p><p class="bullet" data-fact-id="F024">- Created a representative set of 180 search queries with support colleagues and tracked regressions before releases, documenting how each ranking change affected the results.</p><p class="bullet" data-fact-id="F025">- Rotated through production support, documented recurring failure patterns and added automated checks for common failures and error messages with recovery steps.</p></div>
+    </article>
+    <article class="job">
+      <p class="job-heading" data-fact-id="F026"><strong class="role">Junior Developer</strong> | <em>Kitebox Workshop</em> | <time class="date">2020 - 2022</time></p>
+      <div class="bullets">
+        <p class="bullet" data-fact-id="F027">- Developed internal reporting tools; added integration tests, documented release steps and supported team handover.</p>
+      <p class="bullet" data-fact-id="F028">- Implemented scheduled exports and reconciliation checks for weekly operational reports, replacing spreadsheet copy-and-paste steps with a repeatable pipeline and reviewable exceptions.</p><p class="bullet" data-fact-id="F029">- Added integration fixtures covering permissions, invalid inputs and interrupted imports; used the failures to clarify expected behaviour with the product owner.</p><p class="bullet" data-fact-id="F030">- Prepared onboarding notes and a local development setup used by new team members, including example data, troubleshooting steps and a walkthrough of the release process.</p></div>
+    </article>
+  </section>
+  <section aria-labelledby="projects">
+<h2 id="projects">Selected Projects</h2>
+<p class="education-entry" data-fact-id="F031"><strong>Queue Garden</strong> | <a href="https://example.com/queue-garden">Project notes</a> | 2025</p>
+<p class="bullet" data-fact-id="F032">- Built a small Python job runner to explore retry policies, cancellation and worker recovery. Added fault-injection scenarios for process termination, delayed responses and duplicate delivery; documented which guarantees belonged to the worker and which required application-level checks.</p>
+<p class="bullet" data-fact-id="F033">- Published a reproducible local demo with a queue dashboard and example workloads, allowing colleagues to compare throughput and failure behaviour under controlled conditions.</p>
+<p class="education-entry" data-fact-id="F034"><strong>Find the Frame</strong> | <a href="https://example.com/find-the-frame">Technical walkthrough</a> | 2023</p>
+<p class="bullet" data-fact-id="F035">- Prototyped a catalogue for a community film archive, combining structured metadata filters with text search. Interviewed volunteer librarians, defined a small relevance benchmark and compared ranking changes against the same query set.</p>
+<p class="bullet" data-fact-id="F036">- Added keyboard navigation, clear empty states and import validation. Used feedback from five trial sessions to simplify the search form and make missing metadata visible before publication.</p>
+</section><section aria-labelledby="education">
+    <h2 id="education">Education</h2>
+    <p class="education-entry" data-fact-id="F037"><strong>BSc, Computer Science</strong> | <em>Westmere College</em> | <time class="date">2020</time></p>
+  <p class="education-entry" data-fact-id="F038"><strong>Graduation project:</strong> Designed and evaluated a task-scheduling simulator, comparing queue policies under uneven workloads and reporting latency, fairness and recovery behaviour.</p><p class="education-entry" data-fact-id="F039"><strong>Selected coursework:</strong> Algorithms, database systems, distributed computing, software testing and human-computer interaction.</p></section>
+  <section aria-labelledby="certifications">
+    <h2 id="certifications">Certifications</h2>
+    <p class="education-entry" data-fact-id="F040">Cloud Foundations | Example Learning Institute</p>
+    <p class="education-entry" data-fact-id="F041">Accessible Product Delivery | Example Learning Institute | 2024</p><p class="certification-tags" data-fact-id="F042"><span class="skill-tag">Cloud Systems</span><span class="skill-tag">Automation</span><span class="skill-tag">Release Testing</span></p>
+  </section>
+<section aria-labelledby="community"><h2 id="community">Writing and Community</h2>
+<p class="bullet" data-fact-id="F043">- Wrote a guide to diagnosing background-job failures, using worked examples to explain timeouts, retries and duplicate processing to engineers joining the team.</p>
+<p class="bullet" data-fact-id="F044">- Facilitated a monthly engineering reading group on reliability and testing; captured short notes linking each discussion to a concrete improvement in the team's development process.</p>
+<p class="bullet" data-fact-id="F045">- Volunteered at a community coding club, helping beginners debug projects, write error messages and document installation steps.</p>
+</section></article>
+</main>
+</body>
+</html>

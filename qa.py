@@ -79,8 +79,19 @@ def main():
     reports = []
     if args.personal:
         assert (build.ROOT / 'profile/ground-truth.md').exists(), 'Complete profile/ground-truth.md first'
+    fact_path = build.ROOT / 'profile/fictional-ground-truth.md'
+    facts = dict(re.findall(r'^- \*\*([FS]\d+)\*\* (.+)$', fact_path.read_text(), re.M))
+    expected_fact_ids = {key for key in facts if key.startswith('F')}
     for variant, spec in build.SOURCES.items():
         source = build.load_source(spec['html'])
+        assert (source.path.parent / source.article.get('data-ground-truth', '')).resolve() == fact_path.resolve(), f'{variant}: wrong ground-truth source'
+        grounded_nodes = source.article.xpath('.//h1 | .//p')
+        for node in grounded_nodes:
+            fact_id = node.get('data-fact-id')
+            assert fact_id in facts, f'{variant}: unknown fact {fact_id}'
+            assert normalized(build.source_text(node)) == normalized(facts[fact_id]), f'{variant}: fact drift for {fact_id}'
+        actual_ids = {node.get('data-fact-id') for node in grounded_nodes if node.get('data-fact-id', '').startswith('F')}
+        assert actual_ids == expected_fact_ids, f'{variant}: shared facts differ'
         nodes = source.article.xpath('.//h1 | .//h2 | .//p')
         paragraphs = [build.source_text(node) for node in nodes]
         urls = source.article.xpath('.//a/@href')
