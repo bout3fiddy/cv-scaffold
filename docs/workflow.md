@@ -25,9 +25,9 @@ in HTML. Personal sources live in `personal/master/`; examples stay fictional. M
 
 ## 4. Build and review
 
-Use the explicit-source build and QA commands in [onboarding](onboarding.md)
-for personal documents. Run the full example build and `python qa.py` after
-shared-renderer changes.
+The agent follows [the personal-document instructions](../personal/AGENTS.md)
+to generate and check drafts. Shared-renderer changes require the full example
+checks defined in the root instructions.
 The personal check requires your ground-truth file and rejects recognizable
 sample names, example links and bracketed prompts. Complete the factual,
 privacy and visual reviews before sharing a document.
@@ -46,7 +46,7 @@ inspect the PDF, record the review as incomplete and explain the limitation.
 
 ## 5. Save and share deliberately
 
-Review `git diff` and `git diff --cached --stat` before committing. The ignored
+Review pending changes and staged files using the root agent instructions. The ignored
 profile stays local, but rendered files and HTML can contain all your CV facts.
 Keep an approved version before experimenting, and distinguish a new draft from
 an approved export. Update `personal/status.md` with open questions and the next action.

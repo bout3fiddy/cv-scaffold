@@ -11,8 +11,8 @@ Paste this into the agent after opening the repository:
 
 ## Agent procedure
 
-1. Read root and relevant nested instructions. Run `python init_workspace.py`.
-   It creates private working copies without overwriting existing files. The
+1. Read root and relevant nested instructions. Initialize the private workspace
+   using the setup instructions in `AGENTS.md`. Existing files are preserved. The
    copied sources are still fictional: never present them as the user's CV.
 2. Ask first for target role, any existing CV/notes, preferred language and what
    contact details to show. Collect answers in conversation and update the files.
@@ -27,25 +27,9 @@ Paste this into the agent after opening the repository:
 6. Present the draft and remaining questions. Record explicit approval only when
    received; set the next concrete action in `personal/status.md`.
 
-## Commands for the private standard master
+## Agent instructions
 
-Run from the repository root in the Python environment described by the README:
-
-```sh
-python init_workspace.py
-python build.py --variant swe --source personal/master/resume.html --stem resume --output-dir personal/master/outputs
-python build_cover_letter.py --source personal/master/cover-letter.md --output personal/master/outputs/cover-letter.pdf --author "Your Name" --title "Your Name - Cover Letter" --subject "Target role"
-python qa.py --source personal/master/resume.html --pdf personal/master/outputs/resume.pdf --docx personal/master/outputs/resume.docx --personal
-python qa.py --kind letter --source personal/master/cover-letter.md --pdf personal/master/outputs/cover-letter.pdf --personal
-```
-
-The agent substitutes the user's confirmed metadata in the letter command.
-Personal QA deliberately fails while example identities or links remain. If a
-CV changes length, update its `data-expected-pages` attribute or pass
-`--pages` to its QA command. The initial example expects two pages.
-
-For another layout, start from its corresponding example and fix stylesheet
-paths relative to the copied HTML. Pass `--variant strategy` or `--variant quant`
-to the builder and preserve the example's HTML structure. Edit personal
-content in the copied source. For role-specific drafts, use
-`applications/<organisation>--<role>/` and the same explicit-source commands.
+Environment setup belongs in [the root instructions](../AGENTS.md).
+Personal-document commands belong in [the master instructions](../personal/AGENTS.md).
+Role-specific work follows [the application instructions](../applications/AGENTS.md).
+The agent handles these operations and presents the resulting documents for review.

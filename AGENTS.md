@@ -37,10 +37,40 @@ paths, commands or ownership change. Do not create duplicate masters. Preserve
 uncommitted work and approved exports; inspect exact scope before any deletion.
 Use `docs/housekeeping.md` for versions, approval and handoff rules.
 
+## Human interface
+
+The user works through their agent. Handle environment setup, file edits,
+builds and checks. Ask for facts and preferences in conversation. Keep README
+files focused on purpose, data locations, choices and prompts. Put commands,
+script details and implementation instructions in the relevant AGENTS.md.
+
+## Environment and initialization
+
+Run commands from the repository root. Use Python 3.10 or newer. If the host
+provides an approved document runtime, use it; otherwise create a local environment:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+```
+
+On Windows use `.venv\Scripts\python.exe`. Commands below use `python` to mean
+the selected environment's interpreter. Install Poppler through the host's
+supported package manager if PDF previews are needed and it is unavailable.
+
+```sh
+python init_workspace.py
+```
+
+Initialization preserves existing files. It creates private profile/preferences,
+master sources, review records and status. Copied sources initially contain the
+fictional candidate. Follow `docs/onboarding.md` for the fact interview and
+`personal/AGENTS.md` for drafting and export commands.
+
 ## Build and verify
 
 Use the existing Python renderers; do not create a replacement rendering stack.
-Follow `docs/onboarding.md` for personal-source commands and `docs/workflow.md`
+Use `personal/AGENTS.md` for personal-document commands and `docs/workflow.md`
 for final review. Shared-renderer changes require the fictional regression build:
 `python build.py --all`, `python build_cover_letter.py`, `python qa.py`.
 The fictional CV examples declare two pages in `data-expected-pages`; the letter
@@ -60,6 +90,13 @@ Keep CV bullets specific to the candidate's work. Keep instructions concise.
 Local initialization, drafting, building and checking are normal task work.
 Ask before publishing, pushing personal data, uploading to external tools,
 emailing or submitting unless already authorized. Ignored files remain readable on the local filesystem.
-Review staged files, exports and metadata before an authorized push.
+Review staged files, exports and metadata before an authorized push:
+
+```sh
+git diff
+git diff --cached --stat
+git diff --cached
+```
+
 Record actual checks, unresolved questions and one next action in the private
 review/status files. Call a draft approved only after explicit user approval.

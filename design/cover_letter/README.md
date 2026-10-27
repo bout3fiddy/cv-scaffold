@@ -1,30 +1,20 @@
 # Cover-letter design
 
-`build.py` owns the letter's ReportLab layout. Run it through the root command:
+The letter uses JetBrains Mono on A4 with space between paragraphs and margins
+that match the CV's visual style. You can ask your agent to change the typeface,
+text size, spacing or placement of contact details.
 
-```sh
-python build_cover_letter.py
-```
+## Prompts to try
 
-| Setting | Value |
-| --- | --- |
-| Typeface | JetBrains Mono |
-| Body size | 10 pt |
-| Line height | 15.5 pt |
-| Space after each paragraph | 14 pt |
-| Side and bottom margins | 42 pt |
-| Top margin | 48 pt |
-| Page | A4 |
+> Style this letter to match my approved CV. Keep it to one page and show me
+> the PDF so I can review the text and spacing together.
 
-Edit `ParagraphStyle` and `SimpleDocTemplate` in this folder's `build.py` to
-change these values. Font registration and PDF metadata helpers are shared
-with `../cv/build.py`; font files and their licence live in `../cv/fonts/`.
+> Use this Paper or Figma reference for the letter's appearance. Preserve my
+> wording and show me any changes needed to fit the page comfortably.
 
-For a Paper or Figma reference, create an A4 portrait frame and set text and
-margins to the values above. Multiply point values by 4/3 for CSS pixels.
-Use the fictional letter during design work, then transfer chosen values to
-the Python layout. Save reference images or exports under `references/` here.
+> Compare the current letter with a version that has more space between
+> paragraphs. Keep both available until I choose one.
 
-Letter content lives in `../../examples/cover-letter.md` or a private working
-copy. Blank lines separate paragraphs; two spaces before a newline create an
-explicit line break. Rebuild and inspect the complete PDF after design changes.
+Design references and layout settings live in this folder. Letter drafts stay
+with your personal documents or the relevant application. The agent checks
+the complete exported page before presenting it for review.
