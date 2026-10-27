@@ -1,0 +1,174 @@
+/* Shared measurements for the default HTML, PDF and DOCX. All lengths are pt. */
+:root {
+  --swe-body-size: 9pt;
+  --swe-body-leading: 14.5pt;
+  --swe-title-size: 21pt;
+  --swe-contact-size: 8.5pt;
+  --swe-contact-leading: 13pt;
+  --swe-section-size: 10pt;
+  --swe-section-leading: 13pt;
+  --swe-title-gap: 9pt;
+  --swe-contact-gap: 3pt;
+  --swe-summary-gap: 20pt;
+  --swe-section-gap: 11pt;
+  --swe-section-content-gap: 5pt;
+  --swe-job-gap: 12pt;
+  --swe-role-content-gap: 6pt;
+  --swe-bullet-gap: 2pt;
+  --swe-bullet-indent: 12pt;
+  --swe-sub-bullet-indent: 30pt;
+  --swe-horizontal-margin: 36pt;
+  --swe-vertical-margin: 38pt;
+  --swe-tag-background: transparent;
+  --swe-tag-text: #000000;
+  --swe-tag-border: #000000;
+  --swe-tag-height: 20pt;
+  --swe-tag-padding: 7pt;
+  --swe-tag-radius: 6pt;
+  --swe-tag-gap: 6pt;
+  --swe-zero-to-one: #A33A32;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+}
+
+.resume[data-variant="swe"] {
+  width: 210mm;
+  min-height: 297mm;
+  padding: var(--swe-vertical-margin) var(--swe-horizontal-margin);
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--swe-body-size);
+  line-height: var(--swe-body-leading);
+  color: var(--paper-body);
+}
+.resume[data-variant="swe"] h1 {
+  margin: 0 0 var(--swe-title-gap);
+  font-size: var(--swe-title-size);
+  line-height: var(--swe-title-size);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.resume[data-variant="swe"] .contact {
+  font-size: var(--swe-contact-size);
+  line-height: var(--swe-contact-leading);
+  color: var(--paper-secondary);
+}
+.resume[data-variant="swe"] .contact-websites {
+  margin-top: var(--swe-contact-gap);
+}
+.resume[data-variant="swe"] .summary,
+.resume[data-variant="swe"] .skills-copy,
+.resume[data-variant="swe"] .job-heading,
+.resume[data-variant="swe"] .bullet,
+.resume[data-variant="swe"] .education-entry {
+  font-size: var(--swe-body-size);
+  line-height: var(--swe-body-leading);
+  color: var(--paper-body);
+}
+.resume[data-variant="swe"] .summary {
+  margin-top: var(--swe-summary-gap);
+  max-width: none;
+}
+.resume[data-variant="swe"] section {
+  display: flow-root;
+  margin-top: var(--swe-section-gap);
+}
+.resume[data-variant="swe"] h2 {
+  margin: 0 0 var(--swe-section-content-gap);
+  font-size: var(--swe-section-size);
+  line-height: var(--swe-section-leading);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+.resume[data-variant="swe"] .job {
+  margin-top: var(--swe-job-gap);
+  break-inside: auto;
+}
+.resume[data-variant="swe"] h2 + .job {
+  margin-top: 0;
+}
+.resume[data-variant="swe"] .job-heading {
+  margin-bottom: var(--swe-role-content-gap);
+}
+.resume[data-variant="swe"] .job-heading,
+.resume[data-variant="swe"] .subheading {
+  break-after: avoid;
+}
+.resume[data-variant="swe"] .bullet {
+  margin-top: var(--swe-bullet-gap);
+  padding-left: var(--swe-bullet-indent);
+  text-indent: calc(-1 * var(--swe-bullet-indent));
+  break-inside: avoid;
+}
+.resume[data-variant="swe"] .bullets > .bullet:first-child {
+  margin-top: 0;
+}
+.resume[data-variant="swe"] .sub-bullets {
+  margin-left: calc(var(--swe-sub-bullet-indent) - var(--swe-bullet-indent));
+}
+.resume[data-variant="swe"] .education-entry {
+  margin-top: 0;
+}
+.resume[data-variant="swe"] .education-entry + .education-entry {
+  margin-top: var(--swe-bullet-gap);
+}
+.resume[data-variant="swe"] .role,
+.resume[data-variant="swe"] .degree,
+.resume[data-variant="swe"] .employer,
+.resume[data-variant="swe"] .school,
+.resume[data-variant="swe"] .date,
+.resume[data-variant="swe"] .separator {
+  color: inherit;
+}
+.resume[data-variant="swe"] .role,
+.resume[data-variant="swe"] .degree {
+  font-weight: 700;
+}
+.resume[data-variant="swe"] a {
+  text-decoration: none;
+}
+.resume[data-variant="swe"] u {
+  text-decoration-thickness: 0.5pt;
+  text-underline-offset: 1pt;
+}
+.resume[data-variant="swe"] .zero-to-one {
+  color: var(--swe-zero-to-one);
+  text-decoration: none;
+}
+
+.resume[data-variant="swe"] .skill-tag {
+  background: var(--swe-tag-background);
+  color: var(--swe-tag-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--swe-tag-height);
+  padding: 0 var(--swe-tag-padding);
+  border: 0.5pt solid var(--swe-tag-border);
+  border-radius: var(--swe-tag-radius);
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.resume[data-variant="swe"] .certification-tags {
+  display: flex;
+  gap: var(--swe-tag-gap);
+  margin-top: 4pt;
+}

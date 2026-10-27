@@ -1,0 +1,21 @@
+:root {
+  --paper-ink: #1c1917;
+  --paper-body: #1f1c18;
+  --paper-secondary: #4a4236;
+  --paper-muted: #6f6655;
+  --paper-link: #3a5fcd;
+}
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: #ececec; font-synthesis: none; }
+.resume { margin: 24px auto; background: white; }
+h1 { color: var(--paper-ink); }
+p { margin: 0; }
+h2 { color: var(--paper-muted); text-transform: uppercase; }
+a { color: var(--paper-link); }
+.date { font-style: italic; white-space: nowrap; }
+@media print {
+  body { background: white; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .resume { margin: 0; }
+}
