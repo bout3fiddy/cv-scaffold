@@ -4,3 +4,4 @@
 - New user's next action: ask their agent to follow `docs/onboarding.md`.
 - Initialization: `python init_workspace.py`; existing files are never overwritten.
 - Record personal progress in the ignored `personal/status.md`.
+- Design ownership: `design/cv/` and `design/cover_letter/`. Follow their guides for styling changes.

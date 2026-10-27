@@ -21,7 +21,7 @@ def initialize(root=ROOT):
         output.parent.mkdir(parents=True, exist_ok=True)
         content = (root / source).read_text(encoding='utf-8')
         if target.endswith('.html'):
-            content = re.sub(r'href="\.\./([^"/]+\.css)"', r'href="../../\1"', content)
+            content = re.sub(r'href="\.\./(design/cv/[^"/]+\.css)"', r'href="../../\1"', content)
         with output.open('x', encoding='utf-8') as stream:
             stream.write(content)
         created.append(target)

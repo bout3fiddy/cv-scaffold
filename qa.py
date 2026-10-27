@@ -8,7 +8,7 @@ from docx import Document
 import pdfplumber
 from pypdf import PdfReader
 
-import build
+from design.cv import build
 
 
 def normalized(text):

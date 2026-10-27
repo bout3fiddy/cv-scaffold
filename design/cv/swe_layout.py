@@ -14,7 +14,7 @@ from reportlab.pdfbase.pdfmetrics import stringWidth, getFont
 from struct import unpack_from
 from reportlab.platypus import Flowable, KeepTogether, Paragraph, SimpleDocTemplate, Spacer
 
-import build
+from . import build
 
 STYLE_PATH = Path(__file__).with_name("swe.css")
 

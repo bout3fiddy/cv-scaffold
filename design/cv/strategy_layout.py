@@ -9,8 +9,7 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.platypus import Flowable, KeepTogether, Paragraph, SimpleDocTemplate, Spacer
 
-import build
-import swe_layout
+from . import build, swe_layout
 
 
 class DatedHeading(Flowable):

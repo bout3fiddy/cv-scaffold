@@ -4,7 +4,8 @@
 
 Facts and claim evidence live in the profile. Preferences and design choices
 live in profile/preferences.md. Reusable CV/letter text lives in personal/master.
-Role-specific requirements and tailoring live under applications. Instruction
+Role-specific requirements and tailoring live under applications.
+CV design belongs in `design/cv/`; letter design belongs in `design/cover_letter/`. Instruction
 files contain durable rules. Record dates, personal facts and current tasks
 in the profile and private status files.
 

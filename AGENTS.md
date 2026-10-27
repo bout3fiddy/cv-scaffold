@@ -26,7 +26,9 @@ work. Fictional examples provide structure and styling only.
 - `personal/`: reusable master, review records and working status.
 - `applications/`: role briefs, tailored copies and their exports.
 - `examples/` and `output/`: fictional demonstration sources and outputs.
-- Root Python/CSS and `fonts/`: shared renderer and design implementation.
+- `design/cv/`: CV layouts, stylesheets, fonts and design references.
+- `design/cover_letter/`: letter layout, typography and design references.
+- Root Python build scripts: command entry points for the design packages.
 - `templates/`: blank intake/review records; `docs/`: reusable procedures.
 
 Keep durable rules in the nearest instruction file and volatile facts in the
