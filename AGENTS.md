@@ -42,7 +42,8 @@ Use `docs/housekeeping.md` for versions, approval and handoff rules.
 The user works through their agent. Handle environment setup, file edits,
 builds and checks. Ask for facts and preferences in conversation. Keep README
 files focused on purpose, data locations, choices and prompts. Put commands,
-script details and implementation instructions in the relevant AGENTS.md.
+script details and execution instructions in the relevant AGENTS.md.
+Design work follows `design/AGENTS.md` and its referenced design specification.
 
 ## Environment and initialization
 

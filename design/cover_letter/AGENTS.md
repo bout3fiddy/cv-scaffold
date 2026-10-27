@@ -1,30 +1,16 @@
 # Cover-letter design
 
-This folder owns letter layout and typography. Use the measurements below. Keep design references under `references/` here. The renderer
-uses the CV package's shared font and metadata helpers.
+Read [the design reference](../DESIGN.md) before styling work. This folder owns
+the letter renderer. Store references under `references/` here and keep the
+specification in DESIGN.md current. The renderer uses the CV package's shared
+font and metadata helpers.
 
 Use `python build_cover_letter.py` and `python qa.py` from the repository root.
 Inspect the exported page after a visible design change. For a file move,
 byte-identical output retains the previous visual review evidence. Letter text
 belongs in the example or private source passed to the builder.
 
-## Layout and content format
-
-`build.py` owns the ReportLab `ParagraphStyle` and `SimpleDocTemplate` settings:
-
-| Setting | Value |
-| --- | --- |
-| Typeface | JetBrains Mono |
-| Body size / line height | 10 / 15.5 pt |
-| Space after paragraphs | 14 pt |
-| Side and bottom margins | 42 pt |
-| Top margin | 48 pt |
-| Page | A4 |
-
-Font registration and PDF metadata helpers come from `../cv/build.py`; the font
-files and licence live in `../cv/fonts/`. For Paper/Figma, use an A4 frame and
-multiply point values by 4/3 for CSS pixels. Transfer approved design values to
-the Python settings and save reference images under `references/` here.
+## Content format
 
 Source text uses blank lines between paragraphs and two spaces before a newline
 for an explicit line break. Headings, lists and emphasis syntax print literally.

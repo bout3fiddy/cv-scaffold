@@ -97,9 +97,7 @@ preview below shows the first page of the standard version.
 [Cover letter](output/avery-quill-cover-letter.pdf)
 
 Ask your agent to compare the layouts or develop a style from a reference.
-The [CV design guide](design/cv/README.md) and
-[cover-letter design guide](design/cover_letter/README.md) describe the choices
-and include prompts for working with Paper or Figma.
+The agent follows the design instructions stored under `design/`.
 
 ## Privacy and approval
 

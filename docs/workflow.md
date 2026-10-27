@@ -17,11 +17,9 @@ and dates when tailoring. Keep the profile broader than the selected CV.
 
 ## 3. Design and implement
 
-Use the [CV design guide](../design/cv/README.md) and
-[letter design guide](../design/cover_letter/README.md) to explore styling with fictional text.
-Keep CV values in `design/cv/` CSS tokens and letter values in
-`design/cover_letter/build.py`. Keep semantic headings, text and links
-in HTML. Personal sources live in `personal/master/`; examples stay fictional. Maintain readable type; remove low-value content before reducing size.
+The agent follows [the shared design reference](../design/DESIGN.md) when
+applying or changing a style. Personal sources live in `personal/master/`;
+examples stay fictional.
 
 ## 4. Build and review
 

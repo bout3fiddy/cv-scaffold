@@ -1,5 +1,9 @@
 # Design files
 
+Read [DESIGN.md](DESIGN.md) before design work. It owns the Paper/Figma
+workflow, typography, spacing and layout specifications. Keep these details
+in DESIGN.md; keep commands in the applicable AGENTS.md files.
+
 Keep CV rendering, styles, fonts and design references in `cv/`. Keep letter
 rendering, typography and references in `cover_letter/`. Root build scripts
 are entry points. Shared fonts currently live in `cv/fonts/` with their licence.
