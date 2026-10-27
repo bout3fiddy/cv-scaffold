@@ -1,8 +1,7 @@
 # Working status
 
-- Current document: fictional demonstration, not a real application.
-- Next action: copy `profile/ground-truth.example.md` to
-  `profile/ground-truth.md`, fill it with confirmed facts, then replace the
-  fictional content in `index.html`.
-- Before sharing a personalized export: finish the claim ledger, run both
-  validation modes and visually review the PDF.
+- Current documents: fictional CVs and cover letter built with the Python toolkit.
+- Next action: copy the ground-truth worksheet, record confirmed facts, and edit
+  the example sources or create a role-specific copy under `applications/`.
+- Before sharing: reconcile the claim ledger, build with Python, check content
+  and page count, and visually inspect the final PDF and any Word export.

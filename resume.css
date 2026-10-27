@@ -1,0 +1,240 @@
+:root {
+  --paper-background: #ffffff;
+  --paper-ink: #1c1917;
+  --paper-body: #1f1c18;
+  --paper-secondary: #4a4236;
+  --paper-muted: #6f6655;
+  --paper-divider: #c9bfa8;
+  --paper-link: #3a5fcd;
+  --paper-python: #3776ab;
+  --paper-zig: #d98200;
+  --paper-typescript: #2d5a88;
+  --paper-red: #c53030;
+  --paper-purple: #7c3aed;
+  --paper-teal: #0f766e;
+  --paper-gold: #9a6700;
+  --paper-orange: #c2410c;
+  --pdf-page-width: 595.276;
+  --pdf-page-height: 841.890;
+  --pdf-quant-margin: 30;
+  --pdf-swe-margin: 36;
+  --pdf-title-size: 21;
+  --pdf-contact-size: 7.5;
+  --pdf-body-size: 8.25;
+  --pdf-body-leading: 12.75;
+  --pdf-summary-leading: 13.5;
+  --pdf-section-size: 6.75;
+  --pdf-section-leading: 9;
+  --pdf-role-size: 8.35;
+  --pdf-role-leading: 10.5;
+  --pdf-role-tech-gap: 1.25;
+  --pdf-tech-size: 7.15;
+  --pdf-tech-leading: 8.5;
+  --pdf-tech-content-gap: 1.5;
+  --pdf-v2-body-size: 8.25;
+  --pdf-v2-body-leading: 12.75;
+  --pdf-v2-summary-leading: 13.5;
+  --pdf-v2-section-size: 9;
+  --pdf-v2-section-leading: 11.5;
+  --pdf-v2-section-tracking: 1.1;
+  --pdf-v2-header-summary-gap: 20;
+  --pdf-v2-section-gap: 11;
+  --pdf-v2-section-content-gap: 5;
+  --pdf-v2-role-content-gap: 6;
+  --pdf-v2-job-gap: 12;
+  --pdf-v2-swe-vertical-margin: 32;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ececec;
+}
+
+body {
+  color: var(--paper-body);
+  font-family: "JetBrains Mono", "Liberation Mono", monospace;
+  font-synthesis: none;
+}
+
+.resume {
+  width: 794px;
+  min-height: 1123px;
+  margin: 24px auto;
+  padding: 40px;
+  background: var(--paper-background);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+.resume[data-variant="swe"] {
+  min-height: 1124px;
+  padding: 44px 48px 48px;
+}
+
+h1 {
+  margin: 0 0 6px;
+  color: var(--paper-ink);
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  color: var(--paper-secondary);
+  font-size: 10px;
+  line-height: 14px;
+}
+
+.separator {
+  color: var(--paper-divider);
+  white-space: pre;
+}
+
+a {
+  color: var(--paper-link);
+  text-decoration: underline 1px;
+  text-underline-position: from-font;
+}
+
+.summary {
+  max-width: 680px;
+  margin-top: 18px;
+  color: var(--paper-body);
+  font-size: 11px;
+  line-height: 18px;
+}
+
+.resume[data-variant="swe"] .summary {
+  margin-top: 22px;
+  font-size: 11.5px;
+  line-height: 17.825px;
+}
+
+section {
+  margin-top: 12px;
+}
+
+.resume[data-variant="swe"] section {
+  margin-top: 16px;
+}
+
+h2 {
+  margin: 0 0 7px;
+  color: var(--paper-muted);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+
+.skills-copy,
+.bullet,
+.publication {
+  font-size: 11px;
+  line-height: 17px;
+}
+
+.job {
+  margin-top: 12px;
+}
+
+.job-heading,
+.education-entry {
+  color: var(--paper-secondary);
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.role,
+.degree {
+  color: var(--paper-ink);
+  font-weight: 700;
+}
+
+.employer,
+.school {
+  color: var(--paper-secondary);
+  font-style: italic;
+}
+
+.date {
+  color: var(--paper-muted);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.tech {
+  margin: 2px 0 4px;
+  color: var(--paper-secondary);
+  font-size: 9.5px;
+  line-height: 14px;
+}
+
+.tech-label {
+  color: var(--paper-muted);
+  font-weight: 500;
+}
+
+.tag {
+  text-decoration: underline 1px;
+  text-underline-position: from-font;
+}
+
+.python { color: var(--paper-python); }
+.zig { color: var(--paper-zig); }
+.typescript { color: var(--paper-typescript); }
+.red { color: var(--paper-red); }
+.purple { color: var(--paper-purple); }
+.teal { color: var(--paper-teal); }
+.gold { color: var(--paper-gold); }
+.orange { color: var(--paper-orange); }
+
+.bullet {
+  padding-left: 26px;
+  text-indent: -18px;
+  margin-top: 4px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.selected-work p,
+.education-entry,
+.publication {
+  margin-top: 4px;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff;
+  }
+
+  .resume,
+  .resume[data-variant="swe"] {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+  }
+}

@@ -20,18 +20,19 @@ and dates when tailoring. Keep the profile broader than the one-page CV.
 
 Use the README's Paper/Figma workflow to explore styling with fictional text.
 Keep chosen values in shared CSS tokens. Keep semantic headings, text and links
-in HTML. Maintain readable type; remove low-value content before reducing size.
+in HTML. Letter content lives in `examples/cover-letter.md`. Maintain readable type; remove low-value content before reducing size.
 
 ## 4. Build and review
 
-Run `npm run build`, `npm run check`, then `npm run check:personal` for real CVs.
+Run `python build.py --all`, `python build_cover_letter.py`, `python qa.py`,
+then `python qa.py --personal` for real CVs.
 The personal check requires your ground-truth file and rejects recognizable
 sample names, example links and bracketed prompts. Passing it is not evidence
 that the CV is truthful, fully anonymized or ready to submit.
 
 Review the final exported PDF:
 
-- Exactly one A4 page; no cropped lines, collisions or awkward isolated words.
+- Expected A4 page count (one for these examples); no clipping or collisions.
 - Readable at normal size; consistent margins, spacing and emphasis.
 - Correct name, contact links, employers, role titles and dates.
 - Every claim reconciled with the profile and the candidate's actual contribution.

@@ -1,0 +1,18 @@
+/* Strategy-only grid: dates establish a common right edge without justifying text. */
+.resume[data-variant="swe"] .dated-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12pt;
+}
+
+.resume[data-variant="swe"] .heading-details,
+.resume[data-variant="swe"] .dated-heading .date {
+  white-space: nowrap;
+}
+
+.resume[data-variant="swe"] .dated-heading .date {
+  margin-left: auto;
+  flex: 0 0 auto;
+  text-align: right;
+}

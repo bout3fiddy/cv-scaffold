@@ -4,3 +4,8 @@ profile/ground-truth.md
 profile/evidence/
 .env
 .env.*
+.venv/
+__pycache__/
+*.pyc
+tmp/
+applications/
