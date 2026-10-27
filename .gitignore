@@ -8,4 +8,8 @@ profile/evidence/
 __pycache__/
 *.pyc
 tmp/
-applications/
+applications/*
+!applications/AGENTS.md
+profile/preferences.md
+personal/*
+!personal/AGENTS.md

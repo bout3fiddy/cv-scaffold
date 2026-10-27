@@ -46,7 +46,35 @@ def main():
     parser.add_argument('--output-dir', type=Path, default=build.DEFAULT_OUTPUT_DIR)
     parser.add_argument('--pages', type=int, default=1)
     parser.add_argument('--personal', action='store_true')
+    parser.add_argument('--source', type=Path, help='Custom HTML CV or plain-text letter')
+    parser.add_argument('--pdf', type=Path, help='PDF for the custom source')
+    parser.add_argument('--docx', type=Path, help='Optional Word export for a custom CV')
+    parser.add_argument('--kind', choices=['cv', 'letter'], default='cv')
     args = parser.parse_args()
+    if bool(args.source) != bool(args.pdf):
+        parser.error('--source and --pdf must be provided together')
+    if args.docx and (not args.source or args.kind != 'cv'):
+        parser.error('--docx requires a custom CV source')
+    if args.source:
+        if args.kind == 'cv':
+            source = build.load_source(args.source)
+            paragraphs = [build.source_text(node) for node in source.article.xpath('.//h1 | .//h2 | .//p')]
+            urls = source.article.xpath('.//a/@href')
+        else:
+            paragraphs = args.source.read_text().strip().split('\n\n')
+            urls = []
+        report = check_pdf(args.pdf, paragraphs, args.pages, urls)
+        if args.docx:
+            text = normalized(''.join(p.text for p in Document(args.docx).paragraphs))
+            for paragraph in paragraphs:
+                assert normalized(paragraph) in text, f'Word export missing: {paragraph[:90]}'
+        if args.personal:
+            assert (build.ROOT / 'profile/ground-truth.md').exists(), 'Complete profile/ground-truth.md first'
+            content = args.source.read_text() + str(PdfReader(args.pdf).metadata)
+            assert not re.search(r'Avery Quill|Lantern Studio|Mosslight Tools|Kitebox Workshop|Westmere College|Example Learning Institute|Paperboat Works|example\.com|fictional|\[[^\]]+\]', content, re.I), 'Replace example details and metadata'
+        print(json.dumps(report, indent=2))
+        print('PASS. Visual review and factual verification remain manual.')
+        return
     reports = []
     if args.personal:
         assert (build.ROOT / 'profile/ground-truth.md').exists(), 'Complete profile/ground-truth.md first'

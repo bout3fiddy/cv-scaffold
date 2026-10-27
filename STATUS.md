@@ -1,7 +1,6 @@
-# Working status
+# Starter status
 
-- Current documents: fictional CVs and cover letter built with the Python toolkit.
-- Next action: copy the ground-truth worksheet, record confirmed facts, and edit
-  the example sources or create a role-specific copy under `applications/`.
-- Before sharing: reconcile the claim ledger, build with Python, check content
-  and page count, and visually inspect the final PDF and any Word export.
+- Distributed examples: fictional CVs and cover letter using the shared Python renderers.
+- New user's next action: ask their agent to follow `docs/onboarding.md`.
+- Initialization: `python init_workspace.py`; existing files are never overwritten.
+- Personal progress belongs in the ignored `personal/status.md`, not this file.

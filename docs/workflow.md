@@ -20,12 +20,13 @@ and dates when tailoring. Keep the profile broader than the one-page CV.
 
 Use the README's Paper/Figma workflow to explore styling with fictional text.
 Keep chosen values in shared CSS tokens. Keep semantic headings, text and links
-in HTML. Letter content lives in `examples/cover-letter.md`. Maintain readable type; remove low-value content before reducing size.
+in HTML. Personal sources live in `personal/master/`; examples stay fictional. Maintain readable type; remove low-value content before reducing size.
 
 ## 4. Build and review
 
-Run `python build.py --all`, `python build_cover_letter.py`, `python qa.py`,
-then `python qa.py --personal` for real CVs.
+Use the explicit-source build and QA commands in [onboarding](onboarding.md)
+for personal documents. Run the full example build and `python qa.py` after
+shared-renderer changes.
 The personal check requires your ground-truth file and rejects recognizable
 sample names, example links and bracketed prompts. Passing it is not evidence
 that the CV is truthful, fully anonymized or ready to submit.
@@ -47,5 +48,5 @@ inspect the PDF, report that limitation instead of marking review complete.
 Review `git diff` and `git diff --cached --stat` before committing. The ignored
 profile stays local, but rendered files and HTML can contain all your CV facts.
 Keep an approved version before experimenting, and distinguish a new draft from
-an approved export. Update `STATUS.md` with open questions and the next action.
+an approved export. Update `personal/status.md` with open questions and the next action.
 Publish, push, email or submit only when authorized by the owner.

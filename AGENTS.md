@@ -1,33 +1,54 @@
-# CV authoring
+# CV workspace
 
 ## Start here
 
-Read `README.md`, `profile/ground-truth.md` (if present), and `STATUS.md`.
-The shipped Avery Quill CV is wholly fictional. Its claims are never evidence
-for a real person's CV. `profile/fictional-example.md` records example provenance.
+Read `README.md` and the nearest nested `AGENTS.md` before editing a folder.
+If `profile/ground-truth.md` is missing, follow `docs/onboarding.md`: initialize
+the workspace and interview the user. Otherwise read that profile,
+`profile/preferences.md` and `personal/status.md`. `STATUS.md` describes only
+the distributed starter. Keep personal work out of the fictional examples.
 
-## Sources and boundaries
+## Sources of truth
 
-- User-confirmed facts and supplied evidence in `profile/ground-truth.md` are
-  the source of truth for a real CV. Ask about missing or contradictory facts.
-- Do not invent employers, dates, degrees, metrics, credentials or ownership.
-  Mark unresolved facts `needs-review` in the profile, not as confident CV claims.
-- `examples/*.html` owns CV content; `examples/cover-letter.md` owns letter text.
-  The Python modules render these sources. `swe.css` owns typography and spacing;
-  `resume.css` owns base colours and print setup. `output/` contains exports.
-- Keep the examples to one A4 page by editing content. Longer personal CVs may
-  use an explicitly chosen page count. Do not shrink individual lines or clip
-  overflow to make a page fit. Preserve selectable text and working links.
-- Use local fonts; retain their licence. Do not upload personal information,
-  publish, push, or submit an application without the user's authorization.
-- Keep private evidence out of Git. Before an authorized push inspect the
-  complete diff, staged files, exports and metadata for unintended disclosure.
+1. User-confirmed facts and the claim ledger in `profile/ground-truth.md`.
+2. Supporting evidence in `profile/evidence/` and supplied public sources.
+3. Editable master sources in `personal/master/`.
+4. Role-specific sources in `applications/<organisation>--<role>/`.
+5. Generated exports are derivatives, never the factual source of truth.
 
-## Verify and hand off
+Never invent claims, dates, credentials, metrics or application state. Record
+conflicts as `needs-review`; ask concise questions and continue independent
+work. Fictional examples provide structure and styling only.
 
-Run `python build.py --all`, `python build_cover_letter.py` and `python qa.py`.
-For fully personalized registered examples, also run `python qa.py --personal`; this detects leftover example content, not factual
-truth. Reconcile every claim against the profile manually.
-Render and visually inspect the final PDF for clipping, overlap, spacing and
-readability. See `docs/workflow.md` for the review checklist.
-Record unresolved facts and the next concrete action in `STATUS.md`.
+## Ownership and housekeeping
+
+- `profile/`: private facts, preferences and evidence; see its instructions.
+- `personal/`: reusable master, review records and working status.
+- `applications/`: role briefs, tailored copies and their exports.
+- `examples/` and `output/`: fictional demonstration sources and outputs.
+- Root Python/CSS and `fonts/`: shared renderer and design implementation.
+- `templates/`: blank intake/review records; `docs/`: reusable procedures.
+
+Keep durable rules in the nearest instruction file and volatile facts in the
+profile, status or review records. Update instructions and README together when
+paths, commands or ownership change. Do not create duplicate masters. Preserve
+uncommitted work and approved exports; inspect exact scope before any deletion.
+Use `docs/housekeeping.md` for versions, approval and handoff rules.
+
+## Build and verify
+
+Use the existing Python renderers; do not create a replacement rendering stack.
+Follow `docs/onboarding.md` for personal-source commands and `docs/workflow.md`
+for final review. Shared-renderer changes require the fictional regression build:
+`python build.py --all`, `python build_cover_letter.py`, `python qa.py`.
+Select content to fit the agreed page count; do not shrink individual lines or
+clip overflow. Keep text selectable, links intact and font licences present.
+
+## Permissions and handoff
+
+Local initialization, drafting, building and checking are normal task work.
+Ask before publishing, pushing personal data, uploading to external tools,
+emailing or submitting unless already authorized. Git ignore is not encryption.
+Review staged files, exports and metadata before an authorized push.
+Record actual checks, unresolved questions and one next action in the private
+review/status files. Call a draft approved only after explicit user approval.

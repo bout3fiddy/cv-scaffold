@@ -34,19 +34,22 @@ The default build (`python build.py`) generates the standard CV as PDF and DOCX.
 All example PDFs fit one A4 page. Longer CVs may flow onto multiple pages;
 validate the intended page count rather than shrinking individual lines.
 
-1. Copy `profile/ground-truth.example.md` to `profile/ground-truth.md`.
-2. Fill it with confirmed facts, evidence and unresolved questions.
-3. Edit `examples/software-engineering.html` and `examples/cover-letter.md`.
-   Replace all fictional facts, example links and metadata. Remove the fictional
-   notice only after replacing the story. Keep the HTML structure intact.
-4. Rebuild, run checks and visually inspect the exports before sharing.
+**You can let your agent do the setup and ask you for the facts.** Paste:
 
-For a coding agent:
+> Set up my CV workspace using AGENTS.md and docs/onboarding.md. Initialize the
+> private files and interview me in small batches. Use my existing CV or notes
+> if available, resolve uncertainties, and draft my CV and cover letter from
+> confirmed facts. Build and review them with the existing Python tooling.
+> Preserve the styling unless I ask for changes. Do not publish or submit.
 
-> Read AGENTS.md and profile/ground-truth.md. Draft my CV and cover letter from
-> confirmed facts. Ask about gaps rather than inventing claims. Preserve the
-> shared styling and render with the Python builders. Verify the exports and
-> record unresolved questions in STATUS.md. Do not publish or submit anything.
+The agent runs `python init_workspace.py`, which creates private profile,
+preferences, master sources, a review log and status file without overwriting
+anything. You supply your information conversationally; the agent maintains
+the files. The fictional examples remain reusable references.
+
+See [agent onboarding](docs/onboarding.md) for the interview sequence and exact
+personal-document commands, and [housekeeping](docs/housekeeping.md) for source
+ownership, approvals, versions, privacy and session handoff.
 
 ## Files and responsibilities
 
@@ -62,7 +65,11 @@ For a coding agent:
 | `fonts/` | Embedded JetBrains Mono fonts and licence |
 | `qa.py` | Portable source-content, links, geometry, font and page-count checks |
 | `profile/ground-truth.example.md` | Fact collection and claim ledger worksheet |
-| `AGENTS.md`, `STATUS.md` | Agent instructions and next actions |
+| `AGENTS.md`, nested instructions, `CLAUDE.md` | Shared agent rules and folder ownership |
+| `init_workspace.py`, `templates/` | Non-overwriting private workspace initialization |
+| `personal/` | Private master sources, review log and status |
+| `applications/` | Private role briefs, tailored sources and exports |
+| `STATUS.md` | Distributed starter status; personal progress lives in `personal/status.md` |
 | `output/` | Generated PDFs, editable DOCX files, previews and QA report |
 
 See [code provenance](docs/provenance.md) for what was reused and what changed.
@@ -85,13 +92,17 @@ while trying a new draft. Custom HTML must retain `article.resume`, the
 For the strategy layout, keep `.dated-heading`, `.heading-details` and `time`.
 The quantitative renderer expects one contact paragraph.
 
-The QA command checks the three registered examples and example letter by
-comparing exported content with their sources. Use `--pages 2` if all registered
-CV examples intentionally have two pages; the letter remains one page. For a custom source/output, adapt the
-`build.SOURCES` registry and the QA target list to that document set; the default
-QA is not a validator for arbitrary files. `--personal` additionally rejects
-recognizable fictional content and requires a ground-truth file. It cannot
-verify the truth of claims.
+Without arguments, QA checks the three fictional examples and letter. For your
+own documents, pass explicit source and output paths:
+
+```sh
+python qa.py --source personal/master/resume.html --pdf personal/master/outputs/resume.pdf --docx personal/master/outputs/resume.docx --personal
+python qa.py --kind letter --source personal/master/cover-letter.md --pdf personal/master/outputs/cover-letter.pdf --personal
+```
+
+Use `--pages 2` for an intentionally two-page CV. Personal checks require a
+ground-truth file and reject recognizable fictional details and metadata;
+they do not verify professional claims. Record factual review separately.
 
 ## Generate cover letters
 
@@ -182,7 +193,7 @@ Refresh previews after changing the source. See [the review workflow](docs/workf
 
 ## Privacy
 
-`profile/ground-truth.md`, `profile/evidence/` and `applications/` are ignored by
+Personal profile files, evidence, `personal/` and application content are ignored by
 Git. Example sources and `output/` are tracked: after personalization they can
 contain your career details. Review source, exports, metadata and staged files
 before any push. Share the fictional starter separately from personal work.
